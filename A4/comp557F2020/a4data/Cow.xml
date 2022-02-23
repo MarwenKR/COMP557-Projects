@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<scene ambient="0.1 0.1 0.1 1.0">
+  
+  <light name="myLight" color="1 1 1" from="-3 10 1 " power="0.5" type="point" />
+  <light name="myLight2" color="1 1 1" from="3 10 1 " power="0.5" type="point" />
+  <llight name="myLight3" color="1 1 1" from="0 -5 0 " power="10.0" type="point" />
+
+  <material name="blue" diffuse="0 0 1" specular="0.5 0.5 0.5" hardness="16" />
+  <material name="white" diffuse="1 1 1" specular="0.5 0.5 0.5" hardness="16" />
+  <material name="green" diffuse="0 1 0" specular="0.5 0.5 0.5" hardness="16" />
+  <material name="brown_cow" diffuse="0.8 0.4 0.1" specular="0.5 0.5 0.5" hardness="16" />
+
+  <!-- render configuration -->
+  <render bgcolor="0 0 0" output="cow.png" >
+      <camera name="myCamera" from="0 4 4" to="0 0 0" up="0 1 0" fovy="45" width="256" height="256" />
+  </render> 
+  
+  <node name="root" >
+    <node name="cow" translation="-0.0 0.0 0.0" rotation="0 120 0" scale="0.8 0.8 0.8">
+		<mesh name="cow" filename="a4data/cow.obj" >
+			<material ref="brown_cow" />
+		</mesh>
+    </node>
+  </node>
+  <node name="plane" translation="0 -0.60 0">
+  	<plane>
+      <material ref="green" />
+      <material2 ref="blue" />
+    </plane>
+  </node>    
+
+</scene>
